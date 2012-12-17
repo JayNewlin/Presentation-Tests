@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        
+        <title>Webview Tester</title>
+        <meta name="viewport" content="width=1024, height=768, initial-scale=1, user-scalable=no">
+            
+            <link href="../common/css/universal.css" type="text/css" rel="stylesheet" media="all" />
+            <link href="css/efficacy.css" type="text/css" rel="stylesheet" media="all" />
+            
+			<script src="resource:js/SystemBridge.js"></script>
+            <script type="text/javascript" src="../js/Tracking.js"></script>
+            <script type="text/javascript" src="js/BarGraph.js"></script>
+            <script type="text/javascript" src="js/webkitdragdrop.js"></script>
+            <script type="text/javascript" src="js/efficacy.js"></script>
+    </head>
+    <body>	
+        <!-- content //-->
+        <div id="mainContainer">
+            <header>
+                <h1>Interactive Data Outcome</h1>
+            </header>
+            
+            <div id="contentContainer">
+                <div id="twist_graph_container" class="vertical">
+                    <div id="vertical_graph">
+                        <div id="head_to_head_data" class="tohoriz fadeable clearfix">
+                            <div class="uppercase left" id="head_to_head_text">Head-to-Head <strong>data</strong></div><br id="head_to_head_timeline_break" />
+                            <img src="images/timeline.png" id="timeline_img" />
+                        </div>
+                        
+                        <div class="amaze_line fadeable hidden">Proxitin reduced LDL-C 58% in patients over 18 weeks <div class="reset" onclick="resetBar();">Reset Bar Graph</div></div>
+                        <div id="graph">
+                            <div id="median_label" class="left fadeable">% of patients achieving LDL-C reduction</div>
+                            <div id="twelve_weeks" class="left">
+                                <div id="twelve_weeks_bars" class="bar_container">
+                                    <div id="twelve_weeks_bar1" class="graph_bar gold_bar">
+										<div class="inner_bar">
+											<img src="images/gold_bar_top.png">
+                                                <div></div>
+                                                </div>
+										<span class="percent_text_wrapper vertical"><span id="twelve_weeks_bar1_text" class="fadeable hidden">41<br />%</span></span>
+                                    </div>
+                                    <div id="twelve_weeks_bar2" class="graph_bar gray_bar">
+										<div class="inner_bar">
+											<img src="images/gray_bar_top.png">
+                                                <div></div>
+                                                </div>
+										<span class="percent_text_wrapper vertical"><span id="twelve_weeks_bar2_text" class="fadeable hidden">32<br />%</span></span>
+                                    </div>
+                                    <br class="clear" />
+                                </div>
+                                <div class="graph_base fadeable">
+                                    <p class="left"><img src="images/gold_bar_base.png" /><br />Proxitin</p>
+                                    <p class="right"><img src="images/gray_bar_base.png" /><br />Nullstatin</p>
+                                    <p class="clear">12 weeks</p>
+                                </div>
+                                
+                            </div>
+                            <div id="twenty_four_weeks" class="left">
+                                <div id="twenty_four_weeks_bars" class="bar_container fadeable hidden">
+                                    <div id="twenty_four_weeks_bar1" class="graph_bar gold_bar">
+										<div class="inner_bar">
+											<img src="images/gold_bar_top.png">
+                                                <div></div>
+                                                </div>
+										<span class="percent_text_wrapper vertical"><span id="twenty_four_weeks_bar1_text" class="fadeable hidden">58<br />%</span></span>
+                                    </div>
+                                    <div id="twenty_four_weeks_bar2" class="graph_bar gray_bar">
+										<div class="inner_bar">
+											<img src="images/gray_bar_top.png">
+                                                <div></div>
+                                                </div>
+										<span class="percent_text_wrapper vertical"><span id="twenty_four_weeks_bar2_text" class="fadeable hidden">44<br />%</span></span>
+                                    </div>
+                                    <br class="clear" />
+                                </div>
+                                <div id="drag_bar_container" class="bar_container fadeable visible">
+                                    <div id="drag_range">
+                                        <div id="drag_handle">
+                                            <img src="images/blue_drag_bar.png" id="drag_handle_img" />
+                                            <div id="drag_percent"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="graph_base fadeable" id="three_d_base">
+                                    <p class="left fadeable hidden"><img src="images/gold_bar_base.png" /><br />Proxitin</p>
+                                    <p class="right fadeable hidden"><img src="images/gray_bar_base.png" /><br />Nullstatin</p>
+                                    <p class="clear">24 weeks</p>
+                                </div>
+                                <div class="graph_base fadeable" id="empty_bars">
+                                    <p class="left"><img src="images/bar_base.png" /><br />Proxitin</p>
+                                    <p class="right"><img src="images/bar_base.png" /><br />Nullstatin</p>
+                                    <p class="clear"></p>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

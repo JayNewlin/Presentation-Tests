@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Survey</title>
+	<meta name="viewport" content="width=1024, height=768, initial-scale=1, user-scalable=no">
+
+	<link href="../common/css/universal.css" type="text/css" rel="stylesheet" media="all" />
+	<link href="css/survey.css" type="text/css" rel="stylesheet" media="all" />
+    <script src="../js/common.js"></script>
+	<script src="resource:js/SystemBridge.js"></script>
+        <script src="../js/Tracking.js"></script>
+    <script src="js/jquery-mobile-min.js"></script>
+        
+        <script type="text/javascript">            
+            function submitValues() {
+                var fields = $(":input").serializeArray();
+                json = {};
+                $("#results").empty();
+                jQuery.each(fields, function(i, field){
+                        json[field.name] = field.value
+                });
+                
+                var jsonString = JSON.stringify(json);
+                console.log(jsonString);
+                
+                var data = new TrackingData();
+                data.set("code", "50000000");
+                data.set("description", "SURVEY_DATA");
+                data.set("page", "Blue Survey");
+                data.set("title", "SURVEY_DATA");
+                data.set("key", "SURVEY_DATA");
+                SystemBridge.trackEvent(data, jsonString);
+            }
+        </script>
+</head>
+
+<body>
+<div id="mainContainer">
+	<header>
+		<h1>Survey</h1>
+	</header>
+	<div id="contentContainer">
+		<form>
+			<div id="survey"> 
+
+				<!-- name -->
+				<div class="question">Your First Name</div>
+				<div class="answer">
+					<input id="q1a1" name="firstname" type="text" size="25" style="-webkit-user-select:text;">
+				</div>
+
+				<!-- ques 1 -->
+				<div class="question">What was your purpose for visiting? (Please check all that apply)</div>
+				<div class="answer">
+					<div id="answerTable">
+						<div class="row">
+							<div class="formObj cell">
+								<input type="checkbox" name="purpose-specific" id="q1a1" />
+							</div>
+							<div class="label cell">
+								<label for="answer1">I was looking for specific information about [product or service].</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="formObj cell">
+								<input type="checkbox" name="purpose-general" id="q1a2" />
+							</div>
+							<div class="label cell">
+								<label for="answer2">I was looking for general information about [product or service].</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="formObj cell">
+								<input type="checkbox" name="purpose-browsing" id="q1a3" />
+							</div>
+							<div class="label cell">
+								<label for="answer3">I was just browsing.</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="formObj cell">
+								<input type="checkbox" name="purpose-purchase" id="q1a4" />
+							</div>
+							<div class="label cell">
+								<label for="answer4">I wanted to make a purchase for [product or service].</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ques 2 -->
+				<div class="question">Please rate your overall satisfaction with [product or service]</div>
+				<div class="answer">
+					<div id="answerTable">
+						<div class="row">
+							<div class="formObj cell">
+								<input type="radio" name="satis" id="answer1" value="Very Satisfied" />
+							</div>
+							<div class="label cell">
+								<label for="answer1">Very Satisfied</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="formObj cell">
+								<input type="radio" name="satis" id="answer2" value="Somewhat Satisfied" />
+							</div>
+							<div class="label cell">
+								<label for="answer2">Somewhat Satisfied</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="formObj cell">
+								<input type="radio" name="satis" id="answer3" value="No Opinion/Neutral" />
+							</div>
+							<div class="label cell">
+								<label for="answer3">No Opinion/Neutral</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="formObj cell">
+								<input type="radio" name="satis" id="answer4" value="Somewhat Dissatisfied" />
+							</div>
+							<div class="label cell">
+								<label for="answer4">Somewhat Dissatisfied</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="formObj cell">
+								<input type="radio" name="satis" id="answer5"  value="Very Dissatisfied"/>
+							</div>
+							<div class="label cell">
+								<label for="answer5">Very Dissatisfied</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ques 3 -->
+				<div class="question">Additional Comments</div>
+				<div class="answer">
+					<div id="answerTable">
+						<textarea cols="40" rows="5" name="comments" style="-webkit-user-select:text;">Enter your comments here...</textarea>
+					</div>
+				</div>
+
+				<input type="Button" value="Submit" class="submit" onClick="submitValues();" />
+			</div>
+		</form>
+	</div>
+</div>
+</body>
+</html>

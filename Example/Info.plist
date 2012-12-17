@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.razorfish.${PRODUCT_NAME:rfc1034identifier}</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>PRES</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2012 [FPO: Some Company]. All rights reserved.</string>
+	<key>Package Metadata</key>
+	<dict>
+		<key>Brand</key>
+		<string>Blue</string>
+		<key>Description</key>
+		<string>Do we need descriptions?</string>
+		<key>Language</key>
+		<string>English</string>
+		<key>Region</key>
+		<string>US</string>
+		<key>Title</key>
+		<string>Example</string>
+	</dict>
+</dict>
+</plist>

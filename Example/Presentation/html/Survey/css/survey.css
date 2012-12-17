@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* CSS Document */
+
+form {padding:10px;}
+.question {display:block;font-size:16px;font-weight:bold;padding: 0 0 6px 0;margin-bottom:2px;color:#333;}
+.answer {display:table;margin-bottom:16px;}
+.row {display:table-row;}
+.cell {display:table-cell;vertical-align:center;padding:0 0 5px 0px;margin:0;}
+.formObj {width:25px;}
+.submit {margin-top:0px;}
+input {margin:0;font-size:14px;}
