@@ -20,10 +20,10 @@
 		F941ABAC1678EEEC008A6A7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F941ABAB1678EEEC008A6A7F /* CoreData.framework */; };
 		F941ABAE1678EF4A008A6A7F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F941ABAD1678EF4A008A6A7F /* MediaPlayer.framework */; };
 		F941ABB01678EF56008A6A7F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F941ABAF1678EF56008A6A7F /* CoreText.framework */; };
-		F9F499A11678F2A400791B9D /* PresentationKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F9F4999F1678F2A400791B9D /* PresentationKit.bundle */; };
+		F97A0F9216BC0D9300A3ED37 /* PresentationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97A0F9116BC0D9300A3ED37 /* PresentationKit.framework */; };
+		F97A0F9416BC0D9E00A3ED37 /* PresentationKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F97A0F9316BC0D9E00A3ED37 /* PresentationKit.bundle */; };
 		F9F49A17167906D900791B9D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F49A16167906D900791B9D /* libz.dylib */; };
 		F9F49A1F1679166300791B9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F49A1E1679166300791B9D /* Main.storyboard */; };
-		F9F49A291679181200791B9D /* PresentationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F49A281679181200791B9D /* PresentationKit.framework */; };
 		F9F49A361679188000791B9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9F49A341679188000791B9D /* InfoPlist.strings */; };
 		F9F49A3D16791A1700791B9D /* Example.bundle in Copy Content Packs */ = {isa = PBXBuildFile; fileRef = F9F49A2E1679188000791B9D /* Example.bundle */; };
 		F9F49A3F16791A5000791B9D /* Presentation in Resources */ = {isa = PBXBuildFile; fileRef = F9F49A3E16791A5000791B9D /* Presentation */; };
@@ -61,10 +61,10 @@
 		F941ABAB1678EEEC008A6A7F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F941ABAD1678EF4A008A6A7F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F941ABAF1678EF56008A6A7F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		F9F4999F1678F2A400791B9D /* PresentationKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PresentationKit.bundle; sourceTree = "<group>"; };
+		F97A0F9116BC0D9300A3ED37 /* PresentationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PresentationKit.framework; path = Frameworks/PresentationKit/PresentationKit.framework; sourceTree = "<group>"; };
+		F97A0F9316BC0D9E00A3ED37 /* PresentationKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = PresentationKit.bundle; path = Frameworks/PresentationKit/PresentationKit.bundle; sourceTree = "<group>"; };
 		F9F49A16167906D900791B9D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F9F49A1E1679166300791B9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F9F49A281679181200791B9D /* PresentationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PresentationKit.framework; sourceTree = "<group>"; };
 		F9F49A2E1679188000791B9D /* Example.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Example.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F49A2F1679188000791B9D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		F9F49A331679188000791B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 				F941AB8B1678ED25008A6A7F /* UIKit.framework in Frameworks */,
 				F941AB8D1678ED25008A6A7F /* Foundation.framework in Frameworks */,
 				F941AB8F1678ED25008A6A7F /* CoreGraphics.framework in Frameworks */,
-				F9F49A291679181200791B9D /* PresentationKit.framework in Frameworks */,
+				F97A0F9216BC0D9300A3ED37 /* PresentationKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +114,8 @@
 		F941AB891678ED25008A6A7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F9F4999C1678F2A400791B9D /* PresentationKit.embeddedframework */,
+				F97A0F9316BC0D9E00A3ED37 /* PresentationKit.bundle */,
+				F97A0F9116BC0D9300A3ED37 /* PresentationKit.framework */,
 				F9F49A16167906D900791B9D /* libz.dylib */,
 				F941AB8A1678ED25008A6A7F /* UIKit.framework */,
 				F941AB8C1678ED25008A6A7F /* Foundation.framework */,
@@ -151,23 +152,6 @@
 				F941ABA01678ED25008A6A7F /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F9F4999C1678F2A400791B9D /* PresentationKit.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				F9F49A281679181200791B9D /* PresentationKit.framework */,
-				F9F4999E1678F2A400791B9D /* Resources */,
-			);
-			path = PresentationKit.embeddedframework;
-			sourceTree = "<group>";
-		};
-		F9F4999E1678F2A400791B9D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F9F4999F1678F2A400791B9D /* PresentationKit.bundle */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		F9F49A311679188000791B9D /* Example */ = {
@@ -269,8 +253,8 @@
 				F941AB9D1678ED25008A6A7F /* Default.png in Resources */,
 				F941AB9F1678ED25008A6A7F /* Default@2x.png in Resources */,
 				F941ABA11678ED25008A6A7F /* Default-568h@2x.png in Resources */,
-				F9F499A11678F2A400791B9D /* PresentationKit.bundle in Resources */,
 				F9F49A1F1679166300791B9D /* Main.storyboard in Resources */,
+				F97A0F9416BC0D9E00A3ED37 /* PresentationKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +361,7 @@
 					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/AZ-NEXUS-bbotlvnljuyzaofgkxgzhcdgqaeo/Build/Products/Debug-iphoneos/PresentationKit.embeddedframework\"",
 					"\"$(SRCROOT)/PresentationKit.embeddedframework\"",
 					"\"$(SRCROOT)/PresentationKit.embeddedframework/PresentationKit.embeddedframework\"",
+					"\"$(SRCROOT)/Frameworks/PresentationKit\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PresentationKitExample/PresentationKitExample-Prefix.pch";
@@ -395,6 +380,7 @@
 					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/AZ-NEXUS-bbotlvnljuyzaofgkxgzhcdgqaeo/Build/Products/Debug-iphoneos/PresentationKit.embeddedframework\"",
 					"\"$(SRCROOT)/PresentationKit.embeddedframework\"",
 					"\"$(SRCROOT)/PresentationKit.embeddedframework/PresentationKit.embeddedframework\"",
+					"\"$(SRCROOT)/Frameworks/PresentationKit\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PresentationKitExample/PresentationKitExample-Prefix.pch";
@@ -449,6 +435,7 @@
 				F9F49A3A1679188000791B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
