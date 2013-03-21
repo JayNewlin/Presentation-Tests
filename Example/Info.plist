@@ -16,18 +16,20 @@
 	<string>1</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2012 [FPO: Some Company]. All rights reserved.</string>
-	<key>Package Metadata</key>
+	<key>Package Description</key>
 	<dict>
-		<key>Brand</key>
-		<string>Blue</string>
-		<key>Description</key>
-		<string>Do we need descriptions?</string>
+		<key>Title</key>
+		<string>Presentation Kit Example</string>
+		<key>Brand Name</key>
+		<string>Presentation Kit Example</string>
 		<key>Language</key>
 		<string>English</string>
-		<key>Region</key>
-		<string>US</string>
-		<key>Title</key>
-		<string>Example</string>
+		<key>Expiration Date</key>
+		<string>2013-12-31</string>
+		<key>Deployment Status</key>
+		<string>Production</string>
+		<key>Dependencies</key>
+		<array/>
 	</dict>
 </dict>
 </plist>
