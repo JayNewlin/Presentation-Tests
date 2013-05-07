@@ -1,5 +1,11 @@
 #import "AppDelegate.h"
+#import <PresentationKit/PKPackageURLProtocol.h>
 
+@interface AppDelegate () <
+PKPresentationViewControllerDelegate
+>
+
+@end
 
 @implementation AppDelegate
 
@@ -15,6 +21,7 @@
     
     PKPresentationViewController* controller = (PKPresentationViewController*)[[self window] rootViewController];
     [controller setFlow:[presentation defaultFlow]];
+    [controller setDelegate:self];
     
     [[self window] makeKeyAndVisible];
     return YES;
@@ -31,6 +38,21 @@
 - (void) applicationWillTerminate:(UIApplication*)application
 {
 }
+
+- (void) presentationViewControllerDidRequestExit:(PKPresentationViewController *)controller
+{
+    // Nothing
+}
+
+- (NSURL*) presentationViewController:(PKPresentationViewController*)slidePresenter willLoadContentFromURL:(NSURL*)url
+{
+    if ([[url scheme] isEqualToString:@"package"]) {
+        return [NSURL fileURLWithPath:[PKPackageURLProtocol pathToResourceForPackageURL:url]];
+    } else {
+        return url;
+    }
+}
+
 
 #pragma mark - Paths
 
