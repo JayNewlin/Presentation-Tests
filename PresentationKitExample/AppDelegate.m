@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-#import <PresentationKit/PKPackageURLProtocol.h>
+#import <PresentationKit/PresentationKit+Private.h>
 
 @interface AppDelegate () <
 PKPresentationViewControllerDelegate
@@ -47,7 +47,7 @@ PKPresentationViewControllerDelegate
 - (NSURL*) presentationViewController:(PKPresentationViewController*)slidePresenter willLoadContentFromURL:(NSURL*)url
 {
     if ([[url scheme] isEqualToString:@"package"]) {
-        return [NSURL fileURLWithPath:[PKPackageURLProtocol pathToResourceForPackageURL:url]];
+        return [NSURL fileURLWithPath:[PresentationKit pathToResourceForPackageURL:url]];
     } else {
         return url;
     }
