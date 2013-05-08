@@ -22,5 +22,12 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Package Description</key>
+	<dict>
+		<key>Title</key>
+		<string>Presentation Kit Example</string>
+		<key>Brand Name</key>
+		<string>Presentation Kit Example</string>
+	</dict>
 </dict>
 </plist>
