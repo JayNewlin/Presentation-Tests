@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9207DDBC173ACAAA00974841 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9207DDBB173ACAAA00974841 /* MobileCoreServices.framework */; };
 		F941AB8B1678ED25008A6A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F941AB8A1678ED25008A6A7F /* UIKit.framework */; };
 		F941AB8D1678ED25008A6A7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F941AB8C1678ED25008A6A7F /* Foundation.framework */; };
 		F941AB8F1678ED25008A6A7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F941AB8E1678ED25008A6A7F /* CoreGraphics.framework */; };
@@ -44,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9207DDBB173ACAAA00974841 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F941AB861678ED25008A6A7F /* PresentationKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PresentationKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F941AB8A1678ED25008A6A7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F941AB8C1678ED25008A6A7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9207DDBC173ACAAA00974841 /* MobileCoreServices.framework in Frameworks */,
 				F9F49A17167906D900791B9D /* libz.dylib in Frameworks */,
 				F941ABB01678EF56008A6A7F /* CoreText.framework in Frameworks */,
 				F941ABAE1678EF4A008A6A7F /* MediaPlayer.framework in Frameworks */,
@@ -95,6 +98,7 @@
 		F941AB7B1678ED25008A6A7F = {
 			isa = PBXGroup;
 			children = (
+				9207DDBB173ACAAA00974841 /* MobileCoreServices.framework */,
 				F941AB901678ED25008A6A7F /* PresentationKitExample */,
 				F9F49A3C1679198A00791B9D /* Content Packs */,
 				F941AB891678ED25008A6A7F /* Frameworks */,
