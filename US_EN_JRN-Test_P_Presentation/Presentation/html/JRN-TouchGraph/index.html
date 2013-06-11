@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+	<link href="css/universal.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/webkitdragdrop.js"></script>
+	<script type="text/javascript" src="resource:js/SystemBridge.js"></script>
+
+	<script type="text/javascript">
+		window.onload = init;
+
+		var myref = 12;
+		const MAX_DRAG_Y = 0;
+		var first, second, arrows, trace, bar1, bar2, currentY, interval;
+		var containerHeight = 250;
+		var proportion = 0.47;
+		var maxPerc = 79;
+		currentY = 0;
+
+		function init() {
+			arrows = document.getElementById("arrows-st");
+			first = document.getElementById("bar1span");
+			second = document.getElementById("bar2span");
+			bar1 = document.getElementById("bar1");
+			bar2 = document.getElementById("bar2");
+			trace = document.getElementById("trace");
+			draggable = new webkit_draggable('arrows-st', {revert: true, vertical: true, horizontal: false,	onDrag: arrowDrag, onEnd: onDragEnd});
+		}
+
+		function arrowDrag() {
+			currentY = draggable.getPosition().y;
+			onPercentBarDrag(currentY)
+		}
+
+		function onPercentBarDrag(barPosY) {
+			if (barPosY >= MAX_DRAG_Y)
+				barPosY = MAX_DRAG_Y;
+
+			draggable.element().style.top = barPosY + "px";
+			draggedPercent = (100 - Math.round((barPosY / containerHeight) * 100) - 100);
+
+			if (draggedPercent > maxPerc) {
+				onPercentBarDrag(-197);
+				return;
+			}
+
+			first.innerHTML = (draggedPercent * 0.6).toPrecision(2) + '%';
+			bar1.style.height = parseInt((barPosY * -1)) +'px';
+			second.innerHTML = (((draggedPercent * 0.6) * proportion).toPrecision(3)) + '%';
+			bar2.style.height = parseInt((barPosY * -1) * proportion) +'px';
+
+			if (draggedPercent >= maxPerc)
+				draggedToEnd();
+		}
+
+		function draggedToEnd() {
+			arrows.style.visibility = "hidden";
+			draggable.destroy();
+			clearInterval(interval);
+			first.innerHTML = "47.5%";
+			second.innerHTML =  "22.4%";
+		}
+
+		function onDragEnd() {
+			arrows.style.visibility = "hidden";
+			draggable.destroy();
+			interval = setInterval("goToEnd()", 5);
+		}
+
+		function goToEnd() {
+			currentY--;
+			onPercentBarDrag(currentY);
+		}
+	</script>
+</head>
+<body>
+	<h1><strong>TOUCH EVENT SUPPORT</strong></h1>
+	<div id="contentContainer">
+		<div id="roundedBox">
+			<h2 class="green"><strong>Sample Touch Driven Interaction</strong></h2>
+			<div id="innerBox">
+				<p><strong>The Harmony Viewer supports all of the standard iOS HTML touch events (ontouchstart, ontouchmove, ontouchend, ontouchcancel).  More information about these events and how to detect, process, and respond to them can be found in Apple's official Safari Web Content Guide: Handling Events.</strong><br><br></p>
+				<div class="graphMain">
+					<span class="verticaltext-short-term">Percent of responders</span>
+					<div id="y-values-short-term"><p><span>60&#8212;</span><span>50&#8212;</span><span>40&#8212;</span><span>30&#8212;</span><span>20&#8212;</span><span class="lastValue">10&#8212;</span><span>0&#8212;</span></p></div>
+
+					<div id="graph_container-st">
+						<div class="green-chart-text"><em>P</em> =0.006</div>
+						<div id="arrows-st" >
+							<div id="small-arrow-st" class="arrowGreen"></div>
+							<div id="small-arrow-st-grey" class="arrowGray"></div>
+						</div>
+						<div id="bar1" class="greenBar"><span id="bar1span" class="white-chart-text">0.18</span></div>
+						<div id="bar2" class="greyBar"><span id="bar2span" class="white-chart-text">0.43 </span> </div>
+					</div>
+
+					<div class="chart-footer-short-term">
+						<div class="chartSubTextGreen" style="margin-left:105px;">PROXITIN <BR> (n=59)</div>
+						<div class="chartSubTextGrey-st" style="margin-left:0px;">Placebo <BR>(n=58)</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

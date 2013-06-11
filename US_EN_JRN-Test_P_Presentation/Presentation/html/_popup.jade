@@ -1,0 +1,17 @@
+extends _base
+
+block append stylesheets
+  link(rel="stylesheet", href="../stylesheets/base.css")
+  link(rel="stylesheet", href="../stylesheets/popup.css")
+
+block body
+  table
+    tr
+      td
+        #popup
+          h1
+            block title
+            a.close(onclick="SystemBridge.closeTopPopUp();")
+              img(src="../images/btn-popup-close.png", width="24", height="24")
+          div
+            block content

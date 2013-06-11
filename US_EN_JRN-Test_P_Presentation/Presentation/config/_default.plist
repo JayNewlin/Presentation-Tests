@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Supported Orientations</key>
+	<dict>
+		<key>Landscape Left</key>
+		<true/>
+		<key>Landscape Right</key>
+		<true/>
+		<key>Portrait</key>
+		<false/>
+		<key>Portrait Upside Down</key>
+		<false/>
+	</dict>
+	<key>Menu</key>
+	<dict>
+		<key>AssetID</key>
+		<string>Revised_Menu</string>
+	</dict>
+	<key>ActiveCall</key>
+	<array>
+		<string>JRN1</string>
+		<string>JRN2</string>
+		<string>Touch Support::JRN-TouchGraph</string>
+		<string>JRN Video Support</string>
+		<string>Dependent Assets</string>
+		<string>JRN Efficiency</string>
+	</array>
+	<key>Slides</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>JRN1</string>
+			<key>URL</key>
+			<string>JRN1/index.html</string>
+			<key>Landscape Preview</key>
+			<string>JRN1/Preview.jpg</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>JRN2</string>
+			<key>URL</key>
+			<string>JRN2/index.html</string>
+			<key>Landscape Preview</key>
+			<string>JRN2/Preview.jpg</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>TouchSupport</string>
+			<key>Subcontent</key>
+			<array>
+				<dict>
+					<key>Title</key>
+					<string>JRN-TouchGraph</string>
+					<key>URL</key>
+					<string>JRN-TouchGraph/index.html</string>
+					<key>Landscape Preview</key>
+					<string>JRN-TouchGraph/L-preview.png</string>
+				</dict>
+				<dict>
+					<key>Title</key>
+					<string>Helper JavaScript</string>
+					<key>URL</key>
+					<string>JRN-TouchSupport/index.html</string>
+					<key>Landscape Preview</key>
+					<string>JRN-TouchSupport/L_preview.png</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>JRN Video Support</string>
+			<key>URL</key>
+			<string>JRN-VideoSupport/index.html</string>
+			<key>Landscape Preview</key>
+			<string>JRN-Video/Preview.jpg</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Dependent Assets</string>
+			<key>URL</key>
+			<string>JRN-DependentAssets/index.html</string>
+			<key>Landscape Preview</key>
+			<string>JRN-DependentAssets/L_preview.png</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>JRN Efficiency</string>
+			<key>URL</key>
+			<string>JRN-Efficiency/index.html</string>
+		</dict>
+	</array>
+</dict>
+</plist>

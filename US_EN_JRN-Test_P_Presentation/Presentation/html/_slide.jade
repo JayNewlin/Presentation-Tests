@@ -1,0 +1,66 @@
+extends _base
+
+block stylesheets
+  link(rel="stylesheet", href="../stylesheets/base.css")
+
+
+block body
+  #body 
+    nav#main
+      block link
+        -var menu = '';
+      - var nav = {}; nav[menu] = 'active'
+      ul
+        li
+          a(class='#{nav.cvrisk}')(onclick="SystemBridge.goToSlide('Risk of CV Death');")
+            img#logo(src="../images/bg-main-nav-icon-cv-risk.png", width="32", height="32")
+            span CV Risk
+        li
+          a(class='#{nav.pharmacology}')(onclick="SystemBridge.goToSlide('Pharmacology::Pharmacology');")
+            img#logo(src="../images/bg-main-nav-icon-pharmacology.png", width="32", height="32")
+            span Pharmacology
+        li
+          a(class='#{nav.initiation}')(onclick="SystemBridge.goToSlide('Efficient Initiation::Efficient Initiation');")
+            img#logo(src="../images/bg-main-nav-icon-initiation.png", width="32", height="32")
+            span Initiation
+        li
+          a(class='#{nav.efficacy}')(onclick="SystemBridge.goToSlide('Plato Study Design::Plato Study Design');") 
+            img#logo(src="../images/bg-main-nav-icon-efficacy.png", width="32", height="32")
+            span Efficacy
+        li
+          a(class='#{nav.bleedingRates}')(onclick="SystemBridge.goToSlide('Total Major Bleeding::Total Major Bleeding');") 
+            img#logo(src="../images/bg-main-nav-icon-bleeding-rates.png", width="32", height="32")
+            span
+                | Bleeding
+                br
+                | Rates
+        li
+          a(class='#{nav.dosing}')(onclick="SystemBridge.goToSlide('Dosing::Dosing');") 
+            img#logo(src="../images/bg-main-nav-icon-dosing.png", width="32", height="32")
+            span Dosing
+        li
+          a(class='#{nav.access}')(onclick="SystemBridge.goToSlide('Access');") 
+            img#logo(src="../images/bg-main-nav-icon-access.png", width="32", height="32")
+            span Access
+        li
+          a(class='#{nav.summary}')(onclick="SystemBridge.goToSlide('Summary');") 
+            img#logo(src="../images/bg-main-nav-icon-summary.png", width="32", height="32")
+            span Summary
+    #content
+      block content
+    footer
+      p 
+        | Please read additional Important Safety Information below and full Prescribing 
+        br
+        | Information, including Boxed WARNINGS, and Medication Guide. 
+      nav#utility
+        ul
+          li
+            block footnotes_link
+                a(href="#") Footnotes
+          li
+            block references_link
+                a(href="#") References
+          li
+            a(onclick="SystemBridge.goToSlide('CRI');") Cri
+      img#logo(src="../images/logo.png", width="228", height="88")

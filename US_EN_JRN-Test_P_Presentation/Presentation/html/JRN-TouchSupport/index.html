@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+	<link href="css/universal.css" rel="stylesheet" type="text/css">
+	<link href="css/scroller.css" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript" src="resource:js/SystemBridge.js"></script>
+	<script type="text/javascript" src="resource:js/noClickDelay.js"></script>
+	<script type="text/javascript" src="resource:js/iscroll.js"></script>
+	<script>
+		function initialize() {
+			// http://cubiq.org/iscroll-4
+			new iScroll('scrollWrapper');
+			// http://cubiq.org/remove-onclick-delay-on-webkit-for-iphone
+			new NoClickDelay('fastClick');
+
+			// add some timers to benchmark the NoClickDelay impact
+			var normalClick = document.getElementById('normalClick');
+			var fastClick = document.getElementById('fastClick');
+			var result = document.getElementById('result');
+
+			normalClick.addEventListener('touchstart', function(e){
+										this.timeStart = e.timeStamp;
+										}, false);
+			normalClick.addEventListener('click', function(e){
+										result.innerHTML = 'Delay: ' + (e.timeStamp-this.timeStart) + 'ms';
+										}, false);
+
+			fastClick.addEventListener('touchstart', function(e){
+									   this.timeStart = e.timeStamp;
+									   }, false);
+			fastClick.addEventListener('click', function(e){
+									   result.innerHTML = 'Delay: ' + (e.timeStamp-this.timeStart) + 'ms';
+									   }, false);
+			}
+		document.addEventListener('DOMContentLoaded', initialize, false);
+
+		function changeResultColor(color) {
+			var result = document.getElementById('result');
+			result.style.backgroundColor = color;
+		}
+	</script>
+</head>
+<body>
+	<h1><strong>TOUCH EVENT SUPPORT</strong></h1>
+	<div id="contentContainer">
+		<div id="roundedBox">
+			<!--
+			<h2 class="green"><strong>Details</strong></h2>
+			<div id="innerBox">
+				<p>
+					<ul>
+						<li>NoClickDelay</li>
+						<li id="normalClick" onclick="changeResultColor('red');">Regular ONCLICK</li>
+						<li id="fastClick" onclick="changeResultColor('green');">Expedited ONCLICK</li>
+						<li>iScroll for scrollable divs</li>
+					</ul>
+				</p>
+				<div id="result">Tap on the buttons above</div>
+				<div id="scrollWrapper">
+					<div id="scroller">
+						<ul>
+							<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend placerat lorem, quis bibendum tellus mattis sit amet. Ut hendrerit lobortis faucibus. Pellentesque id risus quis purus vulputate fringilla. Sed ac felis lectus, eget blandit ipsum. Sed nec velit eu nulla pellentesque placerat eu ut odio. Vivamus vitae nisi eu erat laoreet fermentum. Sed ut sem quis diam iaculis hendrerit. Donec aliquet quam in nulla tristique sed vulputate metus accumsan. Nam nec turpis in erat vulputate pulvinar sed sit amet neque. Donec purus ligula, volutpat ac placerat at, sollicitudin nec erat. Vestibulum lobortis, enim non eleifend gravida, augue est porttitor ante, non eleifend nisl metus a eros. Sed eget quam lacus, in mattis elit. In hac habitasse platea dictumst.</li>
+							<li>Donec tempor arcu quis justo hendrerit vitae condimentum urna lacinia. Nam vulputate sodales sapien. Curabitur malesuada, mauris vitae facilisis faucibus, lectus elit tristique sapien, a tristique lacus sem ac lorem. Aliquam convallis orci ac libero consequat faucibus. Mauris non sem eget nulla euismod consectetur eget ac libero. Pellentesque dapibus arcu vitae nisl tempus luctus. Aenean in bibendum tortor. Pellentesque erat elit, consequat ut ullamcorper in, cursus et lorem. Phasellus viverra lacus eu diam interdum a posuere risus commodo. Etiam iaculis rutrum metus, nec tincidunt ipsum pharetra et. Ut tincidunt nulla augue. Vivamus suscipit dui urna, ut mattis nisl. Phasellus nulla sapien, tristique consequat tempor sit amet, hendrerit at est.</li>
+							<li>Fusce sodales felis in lacus euismod nec feugiat lectus luctus. Phasellus gravida metus eget nunc sollicitudin nec accumsan magna eleifend. Donec posuere egestas mi, ut hendrerit orci varius at. Donec pharetra, libero sit amet ultricies feugiat, libero lacus hendrerit arcu, et tempus dolor dolor a quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam est justo, semper vel faucibus quis, gravida ac nunc. Fusce sapien diam, venenatis non suscipit quis, tristique eget mauris. Donec augue risus, viverra sit amet congue non, rutrum at erat. Etiam faucibus nisl sit amet diam elementum vehicula. Curabitur tincidunt sem non felis viverra nec dictum arcu volutpat. Sed sagittis massa a justo venenatis in facilisis arcu posuere. Maecenas eget sem odio, cursus gravida ligula.</li>
+							<li>Nullam nec ipsum erat. In et nulla turpis. Fusce consectetur euismod convallis. Vivamus pretium malesuada dui, varius adipiscing est vehicula in. Phasellus bibendum metus eget tellus blandit a malesuada dolor commodo. Etiam accumsan dolor sit amet risus ornare porttitor ac ac dolor. Morbi volutpat augue ut lacus laoreet non auctor nulla rutrum. Mauris erat ipsum, consequat quis eleifend eget, placerat ac nulla.</li>
+							<li>Donec velit turpis, luctus nec ultrices quis, egestas quis nibh. In semper lacus eu lacus euismod in interdum nulla sodales. In a quam sed sem adipiscing mattis. Nunc ultrices risus non ante lobortis placerat pellentesque quam interdum. In lectus enim, aliquet ac tempus vitae, consequat ut felis. Suspendisse imperdiet enim in orci consectetur eget tincidunt neque dictum. Sed non purus et urna dictum egestas. Duis libero nulla, vehicula sed pulvinar id, imperdiet nec mi. Ut lacinia ultricies sapien, ut gravida felis semper at. Nulla eget nulla urna, vel facilisis dui. Proin sit amet magna at nisl ultrices sollicitudin. In sed purus id enim sollicitudin ultricies. Curabitur elementum nisl eu ligula pretium at rutrum ligula porttitor. Aliquam vitae lectus sit amet ligula ornare vehicula.</li>
+							<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend placerat lorem, quis bibendum tellus mattis sit amet. Ut hendrerit lobortis faucibus. Pellentesque id risus quis purus vulputate fringilla. Sed ac felis lectus, eget blandit ipsum. Sed nec velit eu nulla pellentesque placerat eu ut odio. Vivamus vitae nisi eu erat laoreet fermentum. Sed ut sem quis diam iaculis hendrerit. Donec aliquet quam in nulla tristique sed vulputate metus accumsan. Nam nec turpis in erat vulputate pulvinar sed sit amet neque. Donec purus ligula, volutpat ac placerat at, sollicitudin nec erat. Vestibulum lobortis, enim non eleifend gravida, augue est porttitor ante, non eleifend nisl metus a eros. Sed eget quam lacus, in mattis elit. In hac habitasse platea dictumst.</li>
+							<li>Donec tempor arcu quis justo hendrerit vitae condimentum urna lacinia. Nam vulputate sodales sapien. Curabitur malesuada, mauris vitae facilisis faucibus, lectus elit tristique sapien, a tristique lacus sem ac lorem. Aliquam convallis orci ac libero consequat faucibus. Mauris non sem eget nulla euismod consectetur eget ac libero. Pellentesque dapibus arcu vitae nisl tempus luctus. Aenean in bibendum tortor. Pellentesque erat elit, consequat ut ullamcorper in, cursus et lorem. Phasellus viverra lacus eu diam interdum a posuere risus commodo. Etiam iaculis rutrum metus, nec tincidunt ipsum pharetra et. Ut tincidunt nulla augue. Vivamus suscipit dui urna, ut mattis nisl. Phasellus nulla sapien, tristique consequat tempor sit amet, hendrerit at est.</li>
+							<li>Fusce sodales felis in lacus euismod nec feugiat lectus luctus. Phasellus gravida metus eget nunc sollicitudin nec accumsan magna eleifend. Donec posuere egestas mi, ut hendrerit orci varius at. Donec pharetra, libero sit amet ultricies feugiat, libero lacus hendrerit arcu, et tempus dolor dolor a quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam est justo, semper vel faucibus quis, gravida ac nunc. Fusce sapien diam, venenatis non suscipit quis, tristique eget mauris. Donec augue risus, viverra sit amet congue non, rutrum at erat. Etiam faucibus nisl sit amet diam elementum vehicula. Curabitur tincidunt sem non felis viverra nec dictum arcu volutpat. Sed sagittis massa a justo venenatis in facilisis arcu posuere. Maecenas eget sem odio, cursus gravida ligula.</li>
+							<li>Nullam nec ipsum erat. In et nulla turpis. Fusce consectetur euismod convallis. Vivamus pretium malesuada dui, varius adipiscing est vehicula in. Phasellus bibendum metus eget tellus blandit a malesuada dolor commodo. Etiam accumsan dolor sit amet risus ornare porttitor ac ac dolor. Morbi volutpat augue ut lacus laoreet non auctor nulla rutrum. Mauris erat ipsum, consequat quis eleifend eget, placerat ac nulla.</li>
+							<li>Donec velit turpis, luctus nec ultrices quis, egestas quis nibh. In semper lacus eu lacus euismod in interdum nulla sodales. In a quam sed sem adipiscing mattis. Nunc ultrices risus non ante lobortis placerat pellentesque quam interdum. In lectus enim, aliquet ac tempus vitae, consequat ut felis. Suspendisse imperdiet enim in orci consectetur eget tincidunt neque dictum. Sed non purus et urna dictum egestas. Duis libero nulla, vehicula sed pulvinar id, imperdiet nec mi. Ut lacinia ultricies sapien, ut gravida felis semper at. Nulla eget nulla urna, vel facilisis dui. Proin sit amet magna at nisl ultrices sollicitudin. In sed purus id enim sollicitudin ultricies. Curabitur elementum nisl eu ligula pretium at rutrum ligula porttitor. Aliquam vitae lectus sit amet ligula ornare vehicula.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			-->
+			<div id="box1">
+				<h2 class="green"><strong>Faster Click Events</strong></h2>
+				<div id="innerBox">
+					<p>
+					Standard "onclick" JavaScript events can be used on touch based iOS devices to respond to finger taps.  Unfortunately, since iOS devices respond to many other types of touch events (double taps, swipes, pinch zooms, etc.), there is about a 300ms delay in the execution of "onclick" events while the system verifies that the original tap wasn't intended to begin some more complicated gesture.
+					<br><br>
+					Mobile developer Matteo Spinelli solved the click delay problem in a JavaScript helper library, NoClickDelay, that more effectively processes the available touch events and executes the "onclick" event in response to a more appropriate sequence of touch events. It is strongly encouraged that all Harmony Viewer content use NoClickDelay or some similar script to expedite "onclick" execution.
+					</p>
+					<div id="normalClick" class="button_example" onclick="changeResultColor('red');">Regular ONCLICK</div>
+					<br>
+					<div id="fastClick" class="button_example" onclick="changeResultColor('green');">Expedited ONCLICK</div>
+					<br>
+					<div id="result">Tap on the buttons above to compare the click delay</div>
+				</div>
+			</div>
+			<div id="box2">
+				<h2 class="green"><strong>Scrollable Content Areas</strong></h2>
+				<div id="innerBox">
+					<p>
+					It's often beneficial to define one or more areas of the slide with self-contained scrollable content blocks. Mobile developer Matteo Spinelli solved this content scrolling problem in a third party JavaScript helper library, iScroll, which enables singer finger scrolling of an HTML div element of fixed dimensions. It is strongly encouraged that all Harmony Viewer content use iScroll or some similar script to implement scrollable content areas within slide content.
+					</p>
+					<div id="scrollWrapper">
+						<div id="scroller">
+							<ul>
+								<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend placerat lorem, quis bibendum tellus mattis sit amet. Ut hendrerit lobortis faucibus. Pellentesque id risus quis purus vulputate fringilla. Sed ac felis lectus, eget blandit ipsum. Sed nec velit eu nulla pellentesque placerat eu ut odio. Vivamus vitae nisi eu erat laoreet fermentum. Sed ut sem quis diam iaculis hendrerit. Donec aliquet quam in nulla tristique sed vulputate metus accumsan. Nam nec turpis in erat vulputate pulvinar sed sit amet neque. Donec purus ligula, volutpat ac placerat at, sollicitudin nec erat. Vestibulum lobortis, enim non eleifend gravida, augue est porttitor ante, non eleifend nisl metus a eros. Sed eget quam lacus, in mattis elit. In hac habitasse platea dictumst.</li>
+								<li>Donec tempor arcu quis justo hendrerit vitae condimentum urna lacinia. Nam vulputate sodales sapien. Curabitur malesuada, mauris vitae facilisis faucibus, lectus elit tristique sapien, a tristique lacus sem ac lorem. Aliquam convallis orci ac libero consequat faucibus. Mauris non sem eget nulla euismod consectetur eget ac libero. Pellentesque dapibus arcu vitae nisl tempus luctus. Aenean in bibendum tortor. Pellentesque erat elit, consequat ut ullamcorper in, cursus et lorem. Phasellus viverra lacus eu diam interdum a posuere risus commodo. Etiam iaculis rutrum metus, nec tincidunt ipsum pharetra et. Ut tincidunt nulla augue. Vivamus suscipit dui urna, ut mattis nisl. Phasellus nulla sapien, tristique consequat tempor sit amet, hendrerit at est.</li>
+								<li>Fusce sodales felis in lacus euismod nec feugiat lectus luctus. Phasellus gravida metus eget nunc sollicitudin nec accumsan magna eleifend. Donec posuere egestas mi, ut hendrerit orci varius at. Donec pharetra, libero sit amet ultricies feugiat, libero lacus hendrerit arcu, et tempus dolor dolor a quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam est justo, semper vel faucibus quis, gravida ac nunc. Fusce sapien diam, venenatis non suscipit quis, tristique eget mauris. Donec augue risus, viverra sit amet congue non, rutrum at erat. Etiam faucibus nisl sit amet diam elementum vehicula. Curabitur tincidunt sem non felis viverra nec dictum arcu volutpat. Sed sagittis massa a justo venenatis in facilisis arcu posuere. Maecenas eget sem odio, cursus gravida ligula.</li>
+								<li>Nullam nec ipsum erat. In et nulla turpis. Fusce consectetur euismod convallis. Vivamus pretium malesuada dui, varius adipiscing est vehicula in. Phasellus bibendum metus eget tellus blandit a malesuada dolor commodo. Etiam accumsan dolor sit amet risus ornare porttitor ac ac dolor. Morbi volutpat augue ut lacus laoreet non auctor nulla rutrum. Mauris erat ipsum, consequat quis eleifend eget, placerat ac nulla.</li>
+								<li>Donec velit turpis, luctus nec ultrices quis, egestas quis nibh. In semper lacus eu lacus euismod in interdum nulla sodales. In a quam sed sem adipiscing mattis. Nunc ultrices risus non ante lobortis placerat pellentesque quam interdum. In lectus enim, aliquet ac tempus vitae, consequat ut felis. Suspendisse imperdiet enim in orci consectetur eget tincidunt neque dictum. Sed non purus et urna dictum egestas. Duis libero nulla, vehicula sed pulvinar id, imperdiet nec mi. Ut lacinia ultricies sapien, ut gravida felis semper at. Nulla eget nulla urna, vel facilisis dui. Proin sit amet magna at nisl ultrices sollicitudin. In sed purus id enim sollicitudin ultricies. Curabitur elementum nisl eu ligula pretium at rutrum ligula porttitor. Aliquam vitae lectus sit amet ligula ornare vehicula.</li>
+								<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend placerat lorem, quis bibendum tellus mattis sit amet. Ut hendrerit lobortis faucibus. Pellentesque id risus quis purus vulputate fringilla. Sed ac felis lectus, eget blandit ipsum. Sed nec velit eu nulla pellentesque placerat eu ut odio. Vivamus vitae nisi eu erat laoreet fermentum. Sed ut sem quis diam iaculis hendrerit. Donec aliquet quam in nulla tristique sed vulputate metus accumsan. Nam nec turpis in erat vulputate pulvinar sed sit amet neque. Donec purus ligula, volutpat ac placerat at, sollicitudin nec erat. Vestibulum lobortis, enim non eleifend gravida, augue est porttitor ante, non eleifend nisl metus a eros. Sed eget quam lacus, in mattis elit. In hac habitasse platea dictumst.</li>
+								<li>Donec tempor arcu quis justo hendrerit vitae condimentum urna lacinia. Nam vulputate sodales sapien. Curabitur malesuada, mauris vitae facilisis faucibus, lectus elit tristique sapien, a tristique lacus sem ac lorem. Aliquam convallis orci ac libero consequat faucibus. Mauris non sem eget nulla euismod consectetur eget ac libero. Pellentesque dapibus arcu vitae nisl tempus luctus. Aenean in bibendum tortor. Pellentesque erat elit, consequat ut ullamcorper in, cursus et lorem. Phasellus viverra lacus eu diam interdum a posuere risus commodo. Etiam iaculis rutrum metus, nec tincidunt ipsum pharetra et. Ut tincidunt nulla augue. Vivamus suscipit dui urna, ut mattis nisl. Phasellus nulla sapien, tristique consequat tempor sit amet, hendrerit at est.</li>
+								<li>Fusce sodales felis in lacus euismod nec feugiat lectus luctus. Phasellus gravida metus eget nunc sollicitudin nec accumsan magna eleifend. Donec posuere egestas mi, ut hendrerit orci varius at. Donec pharetra, libero sit amet ultricies feugiat, libero lacus hendrerit arcu, et tempus dolor dolor a quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam est justo, semper vel faucibus quis, gravida ac nunc. Fusce sapien diam, venenatis non suscipit quis, tristique eget mauris. Donec augue risus, viverra sit amet congue non, rutrum at erat. Etiam faucibus nisl sit amet diam elementum vehicula. Curabitur tincidunt sem non felis viverra nec dictum arcu volutpat. Sed sagittis massa a justo venenatis in facilisis arcu posuere. Maecenas eget sem odio, cursus gravida ligula.</li>
+								<li>Nullam nec ipsum erat. In et nulla turpis. Fusce consectetur euismod convallis. Vivamus pretium malesuada dui, varius adipiscing est vehicula in. Phasellus bibendum metus eget tellus blandit a malesuada dolor commodo. Etiam accumsan dolor sit amet risus ornare porttitor ac ac dolor. Morbi volutpat augue ut lacus laoreet non auctor nulla rutrum. Mauris erat ipsum, consequat quis eleifend eget, placerat ac nulla.</li>
+								<li>Donec velit turpis, luctus nec ultrices quis, egestas quis nibh. In semper lacus eu lacus euismod in interdum nulla sodales. In a quam sed sem adipiscing mattis. Nunc ultrices risus non ante lobortis placerat pellentesque quam interdum. In lectus enim, aliquet ac tempus vitae, consequat ut felis. Suspendisse imperdiet enim in orci consectetur eget tincidunt neque dictum. Sed non purus et urna dictum egestas. Duis libero nulla, vehicula sed pulvinar id, imperdiet nec mi. Ut lacinia ultricies sapien, ut gravida felis semper at. Nulla eget nulla urna, vel facilisis dui. Proin sit amet magna at nisl ultrices sollicitudin. In sed purus id enim sollicitudin ultricies. Curabitur elementum nisl eu ligula pretium at rutrum ligula porttitor. Aliquam vitae lectus sit amet ligula ornare vehicula.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

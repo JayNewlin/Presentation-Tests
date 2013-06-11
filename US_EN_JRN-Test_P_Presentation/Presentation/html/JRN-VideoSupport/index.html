@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+	<link href="css/universal.css" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript" src="resource:js/SystemBridge.js"></script>
+	<script type="text/javascript" src="js/vidWithPoster.js"></script>
+	<script>
+		/*
+		var posterVidControl;
+		onload = function() {
+			posterVidControl = new VidWithPoster("posterVideo", "media/KOLposter.png", "media/KOL.m4v", 433, 243);
+			}
+		*/
+
+		function gotFocus() {
+			document.getElementById('basicVideo').play();
+			}
+
+		function lostFocus() {
+			document.getElementById('basicVideo').pause();
+//			posterVidControl.resetVideo();
+			}
+	</script>
+</head>
+<body>
+	<h1><strong>VIDEO SUPPORT</strong></h1>
+	<div id="contentContainer">
+		<div id="roundedBox">
+			<div id="box1">
+				<h2 class="green"><strong>HTML5 Video</strong></h2>
+				<div id="innerBox">
+					<p><strong>The Harmony Viewer supports audio and video media via the standard HTML5 audio and video elements, as is supported by the Mobile Safari web browser on the iPad.  Detailed information about the usage of these media elements can be found in Apple's Safari HTML5 Audio and Video Guide.</strong></p>
+					<ul>
+						<li><strong>File Formats and Compression Settings</strong>
+							<br>It is recommended that Harmony Viewer content limit video to a resolution that can be viewed on all supported devices (e.g. maximum dimensions of 1024x768 pixels).
+						</li>
+						<li><strong>Video Response to gotFocus and lostFocus Events</strong>
+							<br>iPad devices support playback of only one audio or video file at a time.  Since the Harmony Viewer performs some HTML page preloading and caching, it's possible for screens that contain audio or video files to be resident in memory without being visible on screen.  As a result, it's imperative that HTML slides containing audio or video files appropriately respond to the system's "gotFocus" and "lostFocus" events.  Audio/video playback should never be initiated before the page receives a "gotFocus" event.  Likewise, audio/video playback should always be stopped when the page receives a "lostFocus" event.</li>
+					</ul>
+				</div>
+			</div>
+			<div id="box2">
+				<h2 class="green"><strong>Sample Video</strong></h2>
+				<div id="innerBox">
+					<video id="basicVideo" src="media/KOL.m4v" preload controls width="433" height="243" />
+					<!--
+					 // vidWithPoster.js not working correctly (on resetVideo, poster touch event doesn't work)
+					 <div><video id="basicVideo" src="media/KOL.m4v" preload controls width="433" height="243" /></div>
+					 <div id="posterVideo"></div>
+					 -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
